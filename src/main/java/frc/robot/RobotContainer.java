@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.XboxController;
 public class RobotContainer {
   private final Joystick buttonJoystick = new Joystick(OperatorConstants.kDriverControllerPort);
   private final Motor m_Motor = new Motor();
+  //private final JoystickButton autoMoveIGuess = new JoystickButton(buttonJoystick, XboxController.Button, )
   private final JoystickButton activateAutoTurn = new JoystickButton(buttonJoystick);
 
   public RobotContainer(new AutoMove, () -> Motor.getAutonomousCommand ) {
