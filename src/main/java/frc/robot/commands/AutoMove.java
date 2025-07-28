@@ -21,9 +21,17 @@ public class AutoMove extends Command {
     @Override
     public void execute() {
         if (timer.hasElapsed(7.5)) {
-            m_Motor.setSpeed(-1);
+            if (timer.hasElapsed(11.25)) {
+                m_Motor.setSpeed(1 - (timer.get() - 11.25) / 3.75);
+            } else {
+                m_Motor.setSpeed((timer.get() - 7.5) / 3.75);
+            }
         } else {
-            m_Motor.setSpeed(1);
+            if (timer.hasElapsed(3.75)) {
+                m_Motor.setSpeed(-1 + (timer.get() - 3.75) / 3.75);
+            } else {
+            m_Motor.setSpeed(-timer.get() / 3.75);
+            }
         }
     }
 
